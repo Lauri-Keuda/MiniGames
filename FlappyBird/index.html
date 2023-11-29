@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fi">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Simple Flappy Bird</title>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <div id="game" onclick="jump()">
+            <div id="block"></div>
+            <div id="hole"></div>
+            <div id="character"></div>
+            <div id="menu">
+                <h2>Flappy Bird</h2>
+                <p id="score">Pisteet: 0</p>
+                <button id="aloitaBtn" onclick="start()">Aloita</button>
+            </div>
+            <img id="tausta" src="tausta.png" alt="Virhe! - Tausta ei ladannut!"/>
+        </div>
+    </body>
+    <script src="script.js"></script>
+</html>
