@@ -106,8 +106,6 @@ body {
 #jumpBtn {
     width: 200px;
     height: 40px;
-    position: relative;
-    left: 350px;
     margin: 10px auto;
     background-color:grey;
     border-style: none;
@@ -121,4 +119,9 @@ body {
     background-color: white;
     color: grey;
     cursor: pointer;
+}
+
+#jumpDiv {
+    display: flex;
+    align-items: center;
 }
