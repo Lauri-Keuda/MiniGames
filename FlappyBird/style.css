@@ -86,7 +86,6 @@ body {
 }
 
 #aloitaBtn:hover {
-
     background-color: white;
     color: grey;
     cursor: pointer;
@@ -102,4 +101,24 @@ body {
 @keyframes tausta {
     0%{left: 0px;}
     0%{left: 800px;}
+}
+
+#jumpBtn {
+    width: 200px;
+    height: 40px;
+    position: relative;
+    left: 350px;
+    margin: 10px auto;
+    background-color:grey;
+    border-style: none;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+#jumpBtn:hover {
+    background-color: white;
+    color: grey;
+    cursor: pointer;
 }
