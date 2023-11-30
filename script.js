@@ -1,5 +1,5 @@
 
 
 function flappybird(){
-    document.location.pathname = "/FlappyBird";
+    document.location.pathname = "/Pelipaikka/FlappyBird";
 }

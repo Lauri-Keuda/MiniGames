@@ -63,5 +63,5 @@ function jump() {
 }
 
 function back() {
-    document.location.pathname = "/"
+    document.location.pathname = "/Pelipaikka";
 }
