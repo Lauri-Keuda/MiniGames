@@ -128,3 +128,16 @@ body {
     display: flex;
     align-items: center;
 }
+
+.backBtn {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    margin: 10px auto;
+    background-color:grey;
+    border-style: none;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: orange;
+}

@@ -61,3 +61,7 @@ function jump() {
         },10)
     }
 }
+
+function back() {
+    document.location.pathname = ".."
+}
