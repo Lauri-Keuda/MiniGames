@@ -29,11 +29,6 @@ setInterval(function(){
     var cTop = -(500-characterTop)
     if (characterTop > 460 || (blockLeft < 40) && (blockLeft > -50) && ((cTop < holeTop) || (cTop > holeTop + 110))){
         character.style.top = 100 + "px";
-        /* block.style.animation = "none";
-        hole.style.animation = "none";
-        alert("Game over.\nScore: " + score);
-        block.style.animation = "block 2s infinite linear";
-        hole.style.animation = "block 2s infinite linear"; */
         menu.style.display = "block";
         gameOn = false;
         block.style.animation = "none";
