@@ -55,7 +55,6 @@ body {
     display: block;
     width: 200px;
     height: fit-content;
-    top: -500px;
     left: 100px;
     position: relative;
     background-color: blue;
