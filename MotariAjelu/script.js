@@ -60,16 +60,18 @@ function right(){
 }
 
 setInterval(function(){
+    //kerätään tiedot
     const car1Left = parseInt(window.getComputedStyle(car1).getPropertyValue("left"));
     const car2Left = parseInt(window.getComputedStyle(car2).getPropertyValue("left"));
     const playerLeft = parseInt(window.getComputedStyle(player).getPropertyValue("left"));
     const car1Bottom = parseInt(window.getComputedStyle(car1).getPropertyValue("top")) + 100;
     const car2Bottom = parseInt(window.getComputedStyle(car2).getPropertyValue("top")) + 200;
     const playerTop = parseInt(window.getComputedStyle(player).getPropertyValue("top")) + 200; //on aina 380
-
+    //katsotaan autojen kaistat
     const car1Lane = defineLane(car1Left, false);
     const car2Lane = defineLane(car2Left, false);
     const playerLanes = defineLane(playerLeft, true);
+    //↓↓↓ virheen korjausta varten - näyttää pelaajan kaistat ↓↓↓
     document.getElementById("kaistat").innerHTML = playerLanes
 
     if((car1Bottom > playerTop && car1Bottom < 580) && playerLanes.includes(car1Lane) || (car2Bottom > playerTop && car2Bottom < 580) &&  playerLanes.includes(car2Lane)){
@@ -87,7 +89,7 @@ function defineLane(carLeft, isPlayer){
         if(carLeft >= 80 && carLeft < 150){         //80-150
             lanes.push(1);
         }
-        if(carLeft > 95 && carLeft < 180){         //95-250
+        if(carLeft > 95 && carLeft < 180){         //95-180
             lanes.push(2);
         }
         if(carLeft > 180 && carLeft <= 250){        //180-250
