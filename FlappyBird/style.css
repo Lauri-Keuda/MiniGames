@@ -60,6 +60,7 @@ body {
     background-color: blue;
     border: 5px solid grey;
     border-radius: 10px;
+    top: -500px;
 }
 
 #menu p {
