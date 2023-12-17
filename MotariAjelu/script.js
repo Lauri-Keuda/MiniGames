@@ -64,9 +64,9 @@ setInterval(function(){
     const car1Left = parseInt(window.getComputedStyle(car1).getPropertyValue("left"));
     const car2Left = parseInt(window.getComputedStyle(car2).getPropertyValue("left"));
     const playerLeft = parseInt(window.getComputedStyle(player).getPropertyValue("left"));
-    const car1Bottom = parseInt(window.getComputedStyle(car1).getPropertyValue("top")) + 100;
-    const car2Bottom = parseInt(window.getComputedStyle(car2).getPropertyValue("top")) + 200;
-    const playerTop = parseInt(window.getComputedStyle(player).getPropertyValue("top")) + 200; //on aina 380
+    const car1Bottom = parseInt(window.getComputedStyle(car1).getPropertyValue("top")); // 100
+    const car2Bottom = parseInt(window.getComputedStyle(car2).getPropertyValue("top")) + 100; // 200
+    const playerTop = parseInt(window.getComputedStyle(player).getPropertyValue("top")) + 100; //200 ::: on aina 280 (380)
     //katsotaan autojen kaistat
     const car1Lane = defineLane(car1Left, false);
     const car2Lane = defineLane(car2Left, false);
@@ -74,11 +74,12 @@ setInterval(function(){
     //↓↓↓ virheen korjausta varten - näyttää pelaajan kaistat ↓↓↓
     document.getElementById("kaistat").innerHTML = playerLanes
 
-    if((car1Bottom > playerTop && car1Bottom < 580) && playerLanes.includes(car1Lane) || (car2Bottom > playerTop && car2Bottom < 580) &&  playerLanes.includes(car2Lane)){
+    if((car1Bottom > playerTop && car1Bottom < (playerTop + 200)) && playerLanes.includes(car1Lane) || (car2Bottom > playerTop && car2Bottom < (playerTop + 200)) &&  playerLanes.includes(car2Lane)){
         gameOn = false;
         menu.style.display = "block";
         car1.style.animation = "none";
         car2.style.animation = "none";
+        /* car1.style.animationPlayState = "paused"; */
         pisteet.innerHTML = "Pisteet: " + score;
     }
 }, 10);
@@ -115,15 +116,11 @@ function defineLane(carLeft, isPlayer){
     }
 }
 
-function runAnimation(car){
-    const speed = (Math.random() * 6) + 4;
-
-    car.style.animation = "car " + speed + "s infinite linear";
-}
-
 car1.addEventListener("animationiteration", () => {
     /* runAnimation(car1); */
-    const random = Math.floor(Math.random() * 2) + 1;
+    /* car1.style.animation = "car 0 infinite linear";
+    car1.style.top = -200 + "px"; */
+    const random = Math.floor(Math.random() * 3) + 1;
     switch(random){
         case 1:
             car1.style.left = 80 + "px";
@@ -133,6 +130,43 @@ car1.addEventListener("animationiteration", () => {
             break;
         case 3:
             car1.style.left = 250 + "px"
+            break;
+        default:
+            break;
+    }
+
+    //↓Vaihtaa nopeutta↓
+    /* car1.style.animation = "none"
+
+    const ranSpeed = Math.floor(Math.random() * 4) + 4;
+
+    const preSpeed = car1.style.animationDuration;
+    const delay = 0;
+    if (preSpeed < ranSpeed){
+        delay = ranSpeed - preSpeed;
+    }
+
+    //car1.style.animationDuration =  6 + "s";
+    //car1.style.animationDelay = "1s";
+
+    car1.style.animation = "car " + ranSpeed + "s " + delay + "s infinite linear"; */
+    score++;
+})
+
+car2.addEventListener("animationiteration", () => {
+    /* runAnimation(car1); */
+    /* car1.style.animation = "car 0 infinite linear";
+    car1.style.top = -200 + "px"; */
+    const random = Math.floor(Math.random() * 3) + 1;
+    switch(random){
+        case 1:
+            car2.style.left = 80 + "px";
+            break;
+        case 2:
+            car2.style.left = 165 + "px";
+            break;
+        case 3:
+            car2.style.left = 250 + "px"
             break;
         default:
             break;
